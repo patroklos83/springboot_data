@@ -1,10 +1,13 @@
 package com.patroclos.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,6 +21,18 @@ public class Employee {
     private String firstName;
 	@Column
     private String lastName;
+	@OneToOne(cascade = CascadeType.ALL)
+    @MapsId
+    private PersonalInfo personalInfo;
+	
+	
+	
+	public PersonalInfo getPersonalInfo() {
+		return personalInfo;
+	}
+	public void setPersonalInfo(PersonalInfo personalInfo) {
+		this.personalInfo = personalInfo;
+	}
 	public Long getId() {
 		return id;
 	}
