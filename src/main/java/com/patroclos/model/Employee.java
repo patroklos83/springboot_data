@@ -11,17 +11,17 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class Employee {
 	
-	@Id @GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
-	private String id;
+	@Id
+	@GeneratedValue
+	private Long id;
 	@Column
     private String firstName;
 	@Column
     private String lastName;
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstName() {

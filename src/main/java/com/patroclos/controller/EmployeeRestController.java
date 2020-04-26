@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.patroclos.model.Employee;
 
-import io.swagger.annotations.Api;
-
 @RestController
 @RequestMapping("/employees")
 public class EmployeeRestController {
